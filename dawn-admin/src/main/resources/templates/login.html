@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>分布式数据库管理系统</title>
+    <meta name="description" content="PaaS后台管理">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{favicon.ico}"/>
+  </head>
+
+  <body class="signin">
+    <div class="col-sm-5">
+                <form id="signupForm">
+                  <h4 class="no-margins">登录：</h4>
+                  <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />
+                  <input type="password" name="password" class="form-control pword"     placeholder="密码"   value="admin123" />
+
+                  <input type="checkbox" id="rememberme" name="rememberme"> <label for="rememberme">记住我</label>
+
+                  <button class="btn btn-success btn-block" id="btnSubmit" data-loading="正在验证登录，请稍后...">登录</button>
+                </form>
+    </div>
+    <script th:inline="javascript"> var ctx = [[@{/}]];</script>
+    <!-- 全局js -->
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- 验证插件 -->
+    <script src="../static/ajax/libs/validate/jquery.validate.min.js" th:src="@{/ajax/libs/validate/jquery.validate.min.js}"></script>
+    <script src="../static/ajax/libs/validate/messages_zh.min.js" th:src="@{/ajax/libs/validate/messages_zh.min.js}"></script>
+    <script src="../static/ajax/libs/layer/layer.min.js" th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+    <script src="../static/ajax/libs/blockUI/jquery.blockUI.js" th:src="@{/ajax/libs/blockUI/jquery.blockUI.js}"></script>
+    <script src="../static/dawn/js/dawn-ui.js" th:src="@{/dawn/js/dawn-ui.js}"></script>
+    <script src="../static/dawn/login.js" th:src="@{/dawn/login.js}"></script>
+  </body>
+</html>
