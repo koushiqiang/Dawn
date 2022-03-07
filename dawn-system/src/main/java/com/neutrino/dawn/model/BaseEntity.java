@@ -1,5 +1,9 @@
 package com.neutrino.dawn.model;
 
+/**
+ * Package: com.neutrino.dawn.model Description: Date:  2020/5/23 15:38 Author: kousq Modified By:
+ */
+
 import com.dawn.common.constants.GlobalConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;

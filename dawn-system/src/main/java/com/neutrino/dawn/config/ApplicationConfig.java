@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * Date:  2020/5/17 22:42 Author: kousq Modified By:
  */
 @Configuration
-@MapperScan("com.neutrino.*.mapper")
+@MapperScan({"com.neutrino.dawn.mapper","com.neutrino.dawn.quartz.mapper"})
 public class ApplicationConfig {
 
 }

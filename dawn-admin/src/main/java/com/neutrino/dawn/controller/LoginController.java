@@ -6,10 +6,9 @@ import com.neutrino.dawn.service.ISysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Package: com.dawn.controller.system
@@ -18,22 +17,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Author: kousq
  * Modified By:
  */
-@Controller
+@RestController
 public class LoginController {
 
     @Autowired
     private ISysUserService sysUserService;
 
         public static final Logger log = LoggerFactory.getLogger(LoginController.class);
-       @GetMapping("login")
+       @GetMapping("/welcomelogin")
         public String login() {
-
             System.out.println("welcome!");
             return "login";
         }
 
-        @PostMapping("login")
-        @ResponseBody
+        @PostMapping("/login")
         public AjaxResult login(String username, String password, Boolean rememberMe){
             SysUser sysuser = sysUserService.selectUserByLoginName(username);
 
