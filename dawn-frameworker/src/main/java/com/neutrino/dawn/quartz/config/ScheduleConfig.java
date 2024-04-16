@@ -2,8 +2,11 @@ package com.neutrino.dawn.quartz.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 /**
@@ -11,6 +14,7 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
  * Modified By:
  */
 @Configuration
+@EnableScheduling
 public class ScheduleConfig {
 
     @Bean
@@ -31,7 +35,7 @@ public class ScheduleConfig {
         prop.put("org.quartz.threadPool.threadPriority", "5");
 
         // JobStore配置
-        prop.put("org.quartz.jobStore.class", "org.quartz.impl.jdbcjobstore.JobStoreTX");
+        prop.put("org.quartz.jobStore.class", "org.springframework.scheduling.quartz.LocalDataSourceJobStore");
 
         // 集群配置
         prop.put("org.quartz.jobStore.isClustered", "false");

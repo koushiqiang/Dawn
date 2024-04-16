@@ -25,14 +25,9 @@
 
         <!-- 定时任务 -->
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.mchange</groupId>
-                    <artifactId>c3p0</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+            <version>${springboot.version}</version>
         </dependency>
 
 <!--        jsch-SSH登录包-->
@@ -48,6 +43,16 @@
             <groupId>ch.ethz.ganymed</groupId>
             <artifactId>ganymed-ssh2</artifactId>
             <version>build210</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>5.3.24</version>
         </dependency>
 
         <!-- SpringBoot 拦截器 -->

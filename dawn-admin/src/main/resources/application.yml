@@ -15,9 +15,6 @@ dawn:
   # 文件上传路径
   profile: D:/profile/
 
-  user:
-    indexUrl: /index
-
 #logging
 
 # 开发环境配置
@@ -60,36 +57,35 @@ spring:
 
   # 数据源配置
   datasource:
-      type: com.alibaba.druid.pool.DruidDataSource
-      driverClassName: com.mysql.cj.jdbc.Driver
-      platform: mysql
-      url: jdbc:mysql://192.168.137.137:3306/dawn
-      username: mysql
-      password: mysql_2019!
-      # 初始连接数
-      initialSize: 5
-      # 最小连接池数量
-      minIdle: 10
-      # 最大连接池数量
-      maxActive: 20
-      # 配置获取连接等待超时的时间
-      maxWait: 30000
-      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-      timeBetweenEvictionRunsMillis: 60000
-      # 配置一个连接在池中最小生存的时间，单位是毫秒
-      minEvictableIdleTimeMillis: 300000
-      # 配置一个连接在池中最大生存的时间，单位是毫秒
-      maxEvictableIdleTimeMillis: 900000
-      # 配置检测连接是否有效
-      validationQuery: SELECT 1 FROM DUAL
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      statViewServlet:
-        enabled: true
-        # 设置白名单，不填则允许所有访问
-        allow:
-        url-pattern: /monitor/druid/*
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/dawn?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&connectTimeout=60000&socketTimeout=300000
+    username: root
+    password: Iamadm1n
+    # 初始连接数
+    initialSize: 5
+    # 最小连接池数量
+    minIdle: 10
+    # 最大连接池数量
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 30000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    # 配置一个连接在池中最大生存的时间，单位是毫秒
+    maxEvictableIdleTimeMillis: 900000
+    # 配置检测连接是否有效
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    statViewServlet:
+      enabled: true
+      # 设置白名单，不填则允许所有访问
+      allow:
+      url-pattern: /monitor/druid/*
+
 
 # MyBatis
 mybatis:
